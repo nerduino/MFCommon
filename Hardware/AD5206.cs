@@ -28,18 +28,25 @@ namespace MFCommon.Hardware
 
         public byte Channel { get; set; }
         private AD5206 Output { get; set; }
+<<<<<<< HEAD
         
         private byte wiper;
+=======
+>>>>>>> cb029d48dd2e06f3ad642b3a2367e4d2faf9a0e4
         public byte Wiper
         {
             set
             {
+<<<<<<< HEAD
                 this.wiper = value;
                 Output.SetWiper(Channel, wiper);
             }
             get
             {
                 return wiper;
+=======
+                Output.SetWiper(Channel, value);
+>>>>>>> cb029d48dd2e06f3ad642b3a2367e4d2faf9a0e4
             }
         }
 

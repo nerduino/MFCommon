@@ -36,7 +36,10 @@
     <Compile Include="Servo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SharedSPI.cs" />
+<<<<<<< HEAD
     <Compile Include="StopWatch.cs" />
+=======
+>>>>>>> cb029d48dd2e06f3ad642b3a2367e4d2faf9a0e4
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.SPOT.Hardware" />
