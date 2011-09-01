@@ -52,11 +52,7 @@
     <Reference Include="System.IO" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <ProjectReference Include="..\..\ThirdParty\VikingErik.NetMF\VikingErik.NetMF.MicroLinq\VikingErik.NetMF.MicroLinq.csproj">
-=======
-    <ProjectReference Include="..\..\VikingErik.NetMF\VikingErik.NetMF.MicroLinq\VikingErik.NetMF.MicroLinq.csproj">
->>>>>>> cb029d48dd2e06f3ad642b3a2367e4d2faf9a0e4
       <Project>{FA64F384-FC2C-465B-8D9A-DA9E41F56CF6}</Project>
       <Name>VikingErik.NetMF.MicroLinq</Name>
     </ProjectReference>
