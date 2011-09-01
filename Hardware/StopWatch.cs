@@ -1,59 +1,62 @@
 using System;
 using Microsoft.SPOT;
 
-namespace System.Diagnostics
+namespace MFCommon.Hardware
 {
     public class Stopwatch
     {
-        private long m_startTicks = 0;
-        private long m_stopTicks = 0;
-        private bool m_isRunning = false;
+        private long startTicks = 0;
+        private long stopTicks = 0;
+        private bool isRunning = false;
 
-        private const long m_ticksPerMillisecond = System.TimeSpan.TicksPerMillisecond;
+        private const long ticksPerMillisecond = System.TimeSpan.TicksPerMillisecond;
 
-        public static Stopwatch StartNew()
-        {
-            Stopwatch stopwatch = new Stopwatch();
-            stopwatch.Start();
-            return stopwatch;
-        }
-
-        private Stopwatch()
+        public Stopwatch()
         {
         }
 
         public void Reset()
         {
-            m_startTicks = 0;
-            m_stopTicks = 0;
-            m_isRunning = false;
+            startTicks = 0;
+            stopTicks = 0;
+            isRunning = false;
         }
 
         public void Start()
         {
-            if (m_startTicks != 0 && m_stopTicks != 0)
-                m_startTicks = Microsoft.SPOT.Hardware.Utility.GetMachineTime().Ticks - (m_stopTicks - m_startTicks); // resume existing timer
+            if (startTicks != 0 && stopTicks != 0)
+            {
+                startTicks = Microsoft.SPOT.Hardware.Utility.GetMachineTime().Ticks - (stopTicks - startTicks); // resume existing timer
+            }
             else
-                m_startTicks = Microsoft.SPOT.Hardware.Utility.GetMachineTime().Ticks; // start new timer
-            m_isRunning = true;
+            {
+                startTicks = Microsoft.SPOT.Hardware.Utility.GetMachineTime().Ticks; // start new timer
+            }
+            isRunning = true;
         }
 
         public void Stop()
         {
-            m_stopTicks = Microsoft.SPOT.Hardware.Utility.GetMachineTime().Ticks;
-            m_isRunning = false;
+            stopTicks = Microsoft.SPOT.Hardware.Utility.GetMachineTime().Ticks;
+            isRunning = false;
         }
 
         public long ElapsedMilliseconds
         {
             get
             {
-                if (m_startTicks != 0 && m_isRunning)
-                    return (Microsoft.SPOT.Hardware.Utility.GetMachineTime().Ticks - m_startTicks) / m_ticksPerMillisecond;
-                else if (m_startTicks != 0 && !m_isRunning)
-                    return (m_stopTicks - m_startTicks) / m_ticksPerMillisecond;
+                if (startTicks != 0 && isRunning)
+                {
+                    return (Microsoft.SPOT.Hardware.Utility.GetMachineTime().Ticks - startTicks) / ticksPerMillisecond;
+                }
+                else if (startTicks != 0 && !isRunning)
+                {
+                    return (stopTicks - startTicks) / ticksPerMillisecond;
+                }
                 else
+                {
                     throw new InvalidOperationException();
+                }
             }
         }
     }

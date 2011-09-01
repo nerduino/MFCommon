@@ -8,13 +8,22 @@ namespace MFCommon.Hardware
     public class Led
     {
         public bool State { get; set; }
+        public int FlashDelay { get; set; }
 
         private OutputPort port;
+        private Cpu.Pin pin;
+        private bool p;
+        private int p_2;
 
         public Led(Cpu.Pin portId, bool initialState)
         {
             port = new OutputPort(portId, initialState);
             State = initialState;
+        }
+
+        public Led(Cpu.Pin pin, bool initialState, int flashDelay) : this(pin, initialState)
+        {
+            FlashDelay = flashDelay;
         }
         
         public virtual void Write(bool state) {
@@ -26,7 +35,7 @@ namespace MFCommon.Hardware
         public void Flash()
         {
             Write(!State);
-            Thread.Sleep(100);
+            Thread.Sleep(FlashDelay);
             Write(State);
         }
 
@@ -35,7 +44,7 @@ namespace MFCommon.Hardware
             for (int i = 0; i < count; i++)
             {
                 Flash();
-                Thread.Sleep(100);
+                Thread.Sleep(FlashDelay);
             }
         }
     }
