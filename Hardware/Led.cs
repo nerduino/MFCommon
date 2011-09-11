@@ -11,13 +11,10 @@ namespace MFCommon.Hardware
         public int FlashDelay { get; set; }
 
         private OutputPort port;
-        private Cpu.Pin pin;
-        private bool p;
-        private int p_2;
 
-        public Led(Cpu.Pin portId, bool initialState)
+        public Led(Cpu.Pin pin, bool initialState)
         {
-            port = new OutputPort(portId, initialState);
+            port = new OutputPort(pin, initialState);
             State = initialState;
         }
 
