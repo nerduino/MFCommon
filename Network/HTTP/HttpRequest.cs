@@ -7,7 +7,7 @@ using System.Threading;
 
 namespace Komodex.NETMF.MicroTweet.HTTP
 {
-    public class HttpRequest : IDisposable
+    public class HttpRequest 
     {
         HttpResponse response = null;
 
@@ -58,7 +58,7 @@ namespace Komodex.NETMF.MicroTweet.HTTP
                 return response;
 
             // Build the request
-            string request = Method + " " + Uri.Path + " HTTP/1.1\r\n";
+            string request = Method + " " + Uri.Path + " HTTP/1.0\r\n";
             request += "Host: " + Uri.Hostname + "\r\n";
 
             // Headers
@@ -76,32 +76,25 @@ namespace Komodex.NETMF.MicroTweet.HTTP
             IPHostEntry hostEntry = Dns.GetHostEntry(Uri.Hostname);
 
             // Create socket and connect
-            Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-            socket.SendTimeout = socket.ReceiveTimeout = Timeout * 1000;
-            socket.Connect(new IPEndPoint(hostEntry.AddressList[0], Uri.Port));
+            using (Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp))
+            {
+                socket.SendTimeout = socket.ReceiveTimeout = Timeout * 1000;
+                socket.Connect(new IPEndPoint(hostEntry.AddressList[0], Uri.Port));
 
-            // Convert the HTTP request to a byte array
-            byte[] requestBytes = Encoding.UTF8.GetBytes(request);
-            request = null;
+                // Convert the HTTP request to a byte array
+                byte[] requestBytes = Encoding.UTF8.GetBytes(request);
+                request = null;
 
-            // Send the request
-            socket.Send(requestBytes);
-            requestBytes = null;
+                // Send the request
+                socket.Send(requestBytes);
+                requestBytes = null;
 
-            response = new HttpResponse(socket);
+                response = new HttpResponse(socket);
+            }
             return response;
         }
 
         #endregion
 
-        #region IDisposable Members
-
-        public void Dispose()
-        {
-            if (response != null)
-                response.Dispose();
-        }
-
-        #endregion
     }
 }

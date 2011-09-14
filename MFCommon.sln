@@ -1,15 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual C# Express 2010
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hardware", "Hardware\Hardware.csproj", "{95447080-F38B-4C9F-BB06-1F5ECDC9E316}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{F1499913-347F-4DFF-97A3-0C6769B2BCD5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Network", "Network\Network.csproj", "{436407DD-3072-4C53-926A-B0B6314D95DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VikingErik.NetMF.MicroLinq", "..\VikingErik.NetMF\VikingErik.NetMF.MicroLinq\VikingErik.NetMF.MicroLinq.csproj", "{FA64F384-FC2C-465B-8D9A-DA9E41F56CF6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VikingErik.NetMF.MicroLinq", "..\ThirdParty\VikingErik.NetMF\VikingErik.NetMF.MicroLinq\VikingErik.NetMF.MicroLinq.csproj", "{FA64F384-FC2C-465B-8D9A-DA9E41F56CF6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VikingErik.NetMF.MicroLinq.PrebuiltDelegates", "..\VikingErik.NetMF\VikingErik.NetMF.MicroLinq.PrebuiltDelegates\VikingErik.NetMF.MicroLinq.PrebuiltDelegates.csproj", "{7F7C44D0-A55B-427A-A45F-6523667739D7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VikingErik.NetMF.MicroLinq.PrebuiltDelegates", "..\ThirdParty\VikingErik.NetMF\VikingErik.NetMF.MicroLinq.PrebuiltDelegates\VikingErik.NetMF.MicroLinq.PrebuiltDelegates.csproj", "{7F7C44D0-A55B-427A-A45F-6523667739D7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -5,7 +5,7 @@ using System.IO;
 
 namespace Komodex.NETMF.MicroTweet.HTTP
 {
-    public class HttpResponse : IDisposable
+    public class HttpResponse 
     {
         internal HttpResponse(Socket socket)
         {
@@ -56,26 +56,17 @@ namespace Komodex.NETMF.MicroTweet.HTTP
                 }
             } while (!streamReader.EndOfStream);
 
-            ResponseStreamReader = streamReader;
+            //read reset of response
+            ResponseBody = streamReader.ReadToEnd();
         }
 
         #region Properties
 
-        public StreamReader ResponseStreamReader { get; protected set; }
+        public string ResponseBody { get; protected set; }
 
         public int ResponseCode { get; protected set; }
 
         public long ContentLength { get; protected set; }
-
-        #endregion
-
-        #region IDisposable Members
-
-        public void Dispose()
-        {
-            if (ResponseStreamReader != null)
-                ResponseStreamReader.Dispose();
-        }
 
         #endregion
     }
