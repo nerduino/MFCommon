@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VikingErik.NetMF.MicroLinq"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VikingErik.NetMF.MicroLinq.PrebuiltDelegates", "..\ThirdParty\VikingErik.NetMF\VikingErik.NetMF.MicroLinq.PrebuiltDelegates\VikingErik.NetMF.MicroLinq.PrebuiltDelegates.csproj", "{7F7C44D0-A55B-427A-A45F-6523667739D7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utils", "Utils\Utils.csproj", "{FD99E5C2-BE04-4846-94E0-F9C60E9BB264}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{7F7C44D0-A55B-427A-A45F-6523667739D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F7C44D0-A55B-427A-A45F-6523667739D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F7C44D0-A55B-427A-A45F-6523667739D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD99E5C2-BE04-4846-94E0-F9C60E9BB264}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD99E5C2-BE04-4846-94E0-F9C60E9BB264}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD99E5C2-BE04-4846-94E0-F9C60E9BB264}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD99E5C2-BE04-4846-94E0-F9C60E9BB264}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

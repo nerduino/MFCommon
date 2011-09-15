@@ -12,12 +12,15 @@ namespace MFCommon.Hardware
 
         protected void Write(byte channel, byte value)
         {
-            byte[] WriteBuffer = new byte[2];
-            WriteBuffer[0] = channel;
-            WriteBuffer[1] = value;
+            lock (SPI)
+            {
+                byte[] WriteBuffer = new byte[2];
+                WriteBuffer[0] = channel;
+                WriteBuffer[1] = value;
 
-            SPI.Config = Configuration;
-            SPI.Write(WriteBuffer);
+                SPI.Config = Configuration;
+                SPI.Write(WriteBuffer);
+            }
         }
     }
 }
