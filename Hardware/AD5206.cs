@@ -2,6 +2,7 @@ using System;
 using Microsoft.SPOT;
 using Microsoft.SPOT.Hardware;
 using SecretLabs.NETMF.Hardware.NetduinoPlus;
+using System.Diagnostics;
 
 namespace MFCommon.Hardware
 {

@@ -38,6 +38,7 @@
     <Compile Include="HTTP\HttpResponse.cs" />
     <Compile Include="HTTP\HttpUri.cs" />
     <Compile Include="NetworkUtils.cs" />
+    <Compile Include="NTP.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Raw\SocketUtils.cs" />
   </ItemGroup>
@@ -56,11 +57,5 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.IO" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\ThirdParty\VikingErik.NetMF\VikingErik.NetMF.MicroLinq\VikingErik.NetMF.MicroLinq.csproj">
-      <Project>{FA64F384-FC2C-465B-8D9A-DA9E41F56CF6}</Project>
-      <Name>VikingErik.NetMF.MicroLinq</Name>
-    </ProjectReference>
   </ItemGroup>
 </Project>
