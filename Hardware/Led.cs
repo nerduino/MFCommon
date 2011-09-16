@@ -12,9 +12,9 @@ namespace MFCommon.Hardware
 
         private OutputPort port;
 
-        public Led(Cpu.Pin pin, bool initialState)
+        public Led(Cpu.Pin portId, bool initialState)
         {
-            port = new OutputPort(pin, initialState);
+            port = new OutputPort(portId, initialState);
             State = initialState;
         }
 
@@ -33,7 +33,7 @@ namespace MFCommon.Hardware
         {
             Write(!State);
             Thread.Sleep(FlashDelay);
-            Write(State);
+            Write(!State);
         }
 
         public void Flash(int count)

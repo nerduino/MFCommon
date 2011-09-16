@@ -8,7 +8,23 @@ namespace MFCommon.Hardware
 {
     public class AD5206 : SharedSPI
     {
-        public AD5206(Cpu.Pin csPin) : base(csPin) {
+
+        public AD5206(Cpu.Pin csPin)  {
+            Configuration = new SPI.Configuration(
+               csPin,             // /CS pin
+               false,             // /CS active LOW
+               0,                 // /CS setup time
+               0,                 // /CS hold time
+               false,             // clock low on idle
+               true,              // rising edge data
+               1000,              // SPI clock rate in KHz
+               SPI_Devices.SPI1   // MOSI MISO and SCLK pinset
+           );
+
+            if (SPI == null)
+            {
+                SPI = new SPI(Configuration);
+            }
         }
         
         public void SetWiper(byte channel, byte position) 

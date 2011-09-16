@@ -1,6 +1,6 @@
 using System;
 
-namespace MFCommon.Network {
+namespace MFCommon.Utils {
     public enum JSONObjectType {
         String,
         Array,

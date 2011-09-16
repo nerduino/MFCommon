@@ -2,7 +2,7 @@
 using System.Collections;
 using System.IO;
 
-namespace MFCommon.Network {
+namespace MFCommon.Utils {
     public class JSONParser : IDisposable {
         private Char[] _accumulator;
         private Char[] _unicodeAccumulator;
