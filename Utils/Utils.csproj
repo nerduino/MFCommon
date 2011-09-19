@@ -41,10 +41,4 @@
     </Reference>
     <Reference Include="System.IO" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\ThirdParty\MFExtensions\NetMf.CommonExtensions\NetMf.CommonExtensions.csproj">
-      <Project>{58F72289-F396-4CCA-8120-B7179C05FF99}</Project>
-      <Name>NetMf.CommonExtensions</Name>
-    </ProjectReference>
-  </ItemGroup>
 </Project>
