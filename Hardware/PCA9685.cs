@@ -64,7 +64,7 @@ namespace MFCommon.Hardware
     /// <summary>
     /// An NXP 16 channel 12 bit PWM I2C LED Driver
     /// </summary>
-    public class PCA6985 : BaseI2CDevice
+    public class PCA9685 : BaseI2CDevice
     {
         public enum Address
         {
