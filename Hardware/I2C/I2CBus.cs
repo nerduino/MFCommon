@@ -2,7 +2,7 @@ using System;
 using Microsoft.SPOT;
 using Microsoft.SPOT.Hardware;
 
-namespace MFCommon.Hardware
+namespace MFCommon.Hardware.I2C
 {
     public class I2CBus : IDisposable
     {

@@ -1,6 +1,5 @@
 using System;
 using Microsoft.SPOT;
-using Komodex.NETMF.MicroTweet.HTTP;
 using System.IO;
 using MFCommon.Network.Raw;
 

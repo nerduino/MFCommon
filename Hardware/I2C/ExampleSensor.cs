@@ -2,6 +2,7 @@ using System;
 using Microsoft.SPOT;
 using Microsoft.SPOT.Hardware;
 using MFCommon.Hardware;
+using MFCommon.Hardware.I2C;
 
 namespace i2cExample
 {
