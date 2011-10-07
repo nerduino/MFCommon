@@ -30,13 +30,6 @@
   </PropertyGroup>
   <Import Project="$(NetMfTargetsBaseDir)$(TargetFrameworkVersion)\CSharp.Targets" />
   <ItemGroup>
-    <Compile Include="Format\JSONObject.cs" />
-    <Compile Include="Format\JSONParser.cs" />
-    <Compile Include="HTTP\HeaderCollection.cs" />
-    <Compile Include="HTTP\HeaderValuePair.cs" />
-    <Compile Include="HTTP\HttpRequest.cs" />
-    <Compile Include="HTTP\HttpResponse.cs" />
-    <Compile Include="HTTP\HttpUri.cs" />
     <Compile Include="NetworkUtils.cs" />
     <Compile Include="NTP.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
